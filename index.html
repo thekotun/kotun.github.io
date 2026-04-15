@@ -6,48 +6,66 @@
     <title>Portfolio</title>
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
+            background-color: #121212;
+            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        header {
-            text-align: center;
-            padding: 50px;
-            background-color: #333;
-        }
         h1 {
-            color: #39ff14; /* Neon Green */
+            color: #39ff14; /* Neon green */
         }
-        section {
-            padding: 50px;
-            border-bottom: 1px solid #444;
-        }
-        .contact {
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .about, .projects, .skills, .contact {
+            padding: 20px;
+            margin: auto;
+            max-width: 800px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 600px) {
+            h1, h2, h3 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="hero">
         <h1>Welcome to My Portfolio</h1>
-    </header>
-    <section id="about">
+    </div>
+    <div class="about">
         <h2>About Me</h2>
-        <p>This is a section about me.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>This section showcases my projects.</p>
-    </section>
-    <section id="skills">
+        <p>Hello! I'm a passionate developer with experience in various fields, including chess projects and machine learning experiments.</p>
+    </div>
+    <div class="projects">
+        <h2>Projects Showcase</h2>
+        <h3>Chess Project</h3>
+        <p>A web application that allows users to play chess against each other and learn strategies.</p>
+        <h3>ML Experiments</h3>
+        <p>A collection of machine learning projects that showcase various algorithms and applications.</p>
+    </div>
+    <div class="skills">
         <h2>Skills</h2>
-        <p>This section outlines my skills.</p>
-    </section>
-    <section class="contact">
-        <h2>Contact</h2>
+        <p>JavaScript, Python, React, Machine Learning, Web Development</p>
+    </div>
+    <div class="contact">
+        <h2>Contact Me</h2>
         <p>Email: <a href="mailto:hello.malikolukotun@gmail.com">hello.malikolukotun@gmail.com</a></p>
-    </section>
+    </div>
 </body>
 </html>
